@@ -14,7 +14,7 @@ export const getCurrentCurrencyFromLC = () => {
 };
 export const getCurrentTimePeriodFromLC = () => {
   const data = localStorage.getItem("currentTimePeriod");
-  const result = data ? JSON.parse(data) : "24d";
+  const result = data ? JSON.parse(data) : "24h";
   return result;
 };
 export const getInitialPageFromLC = () => {
