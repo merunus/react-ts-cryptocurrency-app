@@ -13,7 +13,7 @@ React Select, React Loader Spinner, Framer Motion, Axios.
 
 # How app works
 
-1. Look trough huge list of cryptocoins
+1. Look through huge list of cryptocoins
 2. Sort coins or find one using search bar.
 3. Switch between currencies and time periods
 4. Add coins to your personal favorites list and track on them
