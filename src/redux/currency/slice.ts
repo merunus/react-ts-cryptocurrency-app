@@ -248,7 +248,9 @@ const currencySlice = createSlice({
 
     deleteFromFavorites: (state, { payload }: PayloadAction<string>) => {
       state.favorites = state.favorites.filter((item) => item !== payload);
-      state.coins = state.coins.filter((item) => payload !== item.uuid);
+      if (state.currentTag.value === "favorites") {
+        state.coins = state.coins.filter((item) => payload !== item.uuid);
+      }
       updateFavoritesListToLC(state.favorites);
     },
   },
