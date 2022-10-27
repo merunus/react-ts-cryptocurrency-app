@@ -46,15 +46,12 @@ const SortBar: React.FC = () => {
     }
   };
 
-  const handleChangeTag = (option: TagOption) => {
-    console.log(option);
+  const handleChangeTag = (option: TagOption) =>
     dispatch(changeCurrentTagOption(option));
-  };
-
-  const handleChangeSort = (option: SortOption) => {
-    console.log(option);
+    
+  const handleChangeSort = (option: SortOption) =>
     dispatch(changeCurrentSortOption(option));
-  };
+
 
   const menu = (
     <Menu activeKey={"1"} className={styles.menu}>

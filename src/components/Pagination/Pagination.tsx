@@ -16,7 +16,6 @@ const Pagination: React.FC = () => {
   const handleChangePage = (e: { selected: number }) => {
     dispatch(changeInitialPage(e.selected + 1));
     window.scroll(0, 0);
-    console.log(search);
   };
 
   return (

@@ -42,10 +42,8 @@ const CurrencyTable: React.FC = () => {
     e.stopPropagation();
     if (favorites.includes(coinId)) {
       dispatch(deleteFromFavorites(coinId));
-      console.log("deleted");
       return;
     }
-    console.log("added");
     dispatch(addToFavorites(coinId));
   };
 

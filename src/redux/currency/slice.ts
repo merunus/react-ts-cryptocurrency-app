@@ -60,7 +60,7 @@ export const fetchCoins = createAsyncThunk(
         search,
         uuids,
       } = params;
-
+      const isFavorites = tags === "favorites";
       // Favorites
       const coinIds =
         uuids &&
@@ -75,7 +75,7 @@ export const fetchCoins = createAsyncThunk(
       // Search Param
       const searchParam = `&search=${search ? search : ""}`;
       // Offset Skip (Pagination)
-      const oset = `&offset=${offset ? offset : 0}`;
+      const oset = `&offset=${!isFavorites && offset ? offset : 0}`;
       // Direction (asc/decs)
       const direction = `&orderDirection=${
         orderDirection ? orderDirection : "desc"
@@ -276,7 +276,6 @@ const currencySlice = createSlice({
     builder.addCase(fetchSingleCoin.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.coin = payload.data.coin;
-      console.log(payload);
     });
     builder.addCase(fetchSingleCoin.rejected, (state) => {
       state.isLoading = false;
@@ -298,7 +297,6 @@ const currencySlice = createSlice({
 
     builder.addCase(fetchCoinPrice.fulfilled, (state, { payload }) => {
       state.exchangeRate = Number(payload.data.price);
-      console.log("Exchange Rate is " + state.exchangeRate);
     });
   },
 });

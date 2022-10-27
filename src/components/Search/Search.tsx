@@ -33,7 +33,6 @@ const Search: React.FC<TSearchProps> = React.memo(
             uuids: favorites,
           })
         );
-        console.log(str);
       }, 650),
       []
     );
