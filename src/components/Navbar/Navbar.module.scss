@@ -1,0 +1,93 @@
+@import "../../scss//variables.scss";
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: $border-main;
+  .logo {
+    padding: 10px;
+    margin: 11px 0 12px 22px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    img {
+      height: 28px;
+      width: 28px;
+      margin-right: 9px;
+    }
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      color: $text-color-main;
+      font-size: 1.44em;
+      font-weight: 600;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    margin: 8px 22px 9px 5px;
+    @media (max-width: 567px) {
+      display: none;
+    }
+    &__link {
+      padding: 13px 15px 15px;
+      a {
+        text-decoration: none;
+        color: $text-color-main;
+        transition: $light-transition;
+        &:hover {
+          color: $text-color-bright;
+        }
+        font-size: 0.6rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .hamburger {
+    position: relative;
+    display: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 22px;
+    margin-bottom: 10px;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    @media (max-width: 567px) {
+      display: block;
+    }
+    z-index: 100;
+  }
+  .hamburger .bar,
+  .hamburger:after,
+  .hamburger:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin: 6px 0px;
+    transition: 0.4s;
+    background-color: $text-color-main;
+  }
+
+  .hamburger.isActive:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+  }
+
+  .hamburger.isActive:after {
+    transform: rotate(45deg) translate(-9px, -8px);
+  }
+
+  .hamburger.isActive .bar {
+    opacity: 0;
+  }
+
+  .active {
+    color: $text-color-bright !important;
+  }
+}

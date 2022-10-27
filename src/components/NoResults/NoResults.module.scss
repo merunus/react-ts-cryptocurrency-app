@@ -1,0 +1,45 @@
+@import "../../scss//variables.scss";
+
+.noResults {
+  display: block;
+  text-align: center;
+  padding: 50px 20px;
+  &__title {
+    font-size: 1.4rem;
+    color: $text-color-main;
+    font-weight: 700;
+    margin: 9px 10px 5px;
+    @media (max-width: 567px) {
+      font-size: 1.2rem;
+    }
+  }
+  &__subtitle {
+    margin: 5px 10px 0;
+    font-weight: 500;
+    font-size: 1rem;
+    color: $text-color-main-second;
+    @media (max-width: 567px) {
+      font-size: 0.9rem;
+    }
+  }
+  &__button {
+    cursor: pointer;
+    background-color: #e9f2ff;
+    color: $text-color-main-second;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    display: inline-block;
+    border-radius: 3px;
+    transition: $light-transition;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 8px 19px;
+    text-decoration: none;
+    margin: 25px 0 0;
+    @media (max-width: 567px) {
+      font-size: 0.9rem;
+    }
+  }
+}

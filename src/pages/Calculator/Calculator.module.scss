@@ -1,0 +1,83 @@
+@import "../../scss//variables.scss";
+
+.calculator {
+  margin-top: 50px;
+
+  &__main {
+    color: $text-color-main;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 52px;
+    max-width: 1292px;
+    margin: 0 auto;
+    @media (max-width: 1024px) {
+      padding: 0 32px;
+    }
+    @media (max-width: 568px) {
+      padding: 0 8px;
+    }
+  }
+  &__baseCurrency {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 75% 25%;
+    @media (max-width: 568px) {
+      grid-template-columns: 70% 30%;
+    }
+  }
+  &__inputArea {
+    flex-grow: 1;
+    height: 45px;
+
+    display: flex;
+    border: 1px solid #aec8e8;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding-right: 20px;
+    padding-bottom: 1px;
+    transition: border-color 0.1s ease-out;
+  }
+  &__input {
+    input::-webkit-inner-spin-button {
+      display: none !important;
+    }
+    width: 100%;
+    color: inherit;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: inherit;
+    padding: 0 20px;
+    -webkit-appearance: none;
+    border: none;
+    @media (max-width: 568px) {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+  &__swapBtn {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    width: fit-content;
+    grid-area: swap-button;
+    justify-self: center;
+    margin: 12px auto;
+    svg {
+      stroke: #8db5f2;
+      transform: rotate(90deg);
+      transition: $light-transition;
+      &:hover {
+        stroke: #3c6cb4 !important;
+      }
+    }
+  }
+}
+
+.calculatorSection {
+  margin-top: 0 !important;
+  flex: 1 !important;
+}

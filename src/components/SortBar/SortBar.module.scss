@@ -1,0 +1,107 @@
+@import "../../scss//variables.scss";
+
+.sortBartContainer {
+  margin-bottom: 16px;
+  position: relative;
+  .actions {
+    display: flex;
+    align-items: center;
+    max-width: 1292px;
+    margin: 0 auto;
+    padding: 0 0 0 45px;
+    width: 100%;
+    text-align: left;
+    @media (max-width: 1024px) {
+      padding: 0 0 0 25px;
+    }
+    @media (max-width: 568px) {
+      padding: 0 0 0 13px;
+    }
+
+    .rankList {
+      cursor: pointer;
+      appearance: none;
+      background: none;
+      border: 0;
+      padding: 3px 7px 0;
+      margin: 0;
+      height: 30px;
+    }
+
+    .tagsContainer {
+      padding: 3px 0 0 7px;
+      position: relative;
+      text-align: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .tags {
+        &__list {
+          display: inline-flex;
+          list-style: none;
+          margin: 0;
+        }
+        &__item {
+          display: inline-block;
+          color: $text-color-main-second;
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-decoration: none;
+          padding: 6px 9px 7px;
+          border-radius: 3px;
+          transition: $light-transition;
+          white-space: nowrap;
+          margin-right: 2px;
+          cursor: pointer;
+          background-color: #fff;
+          &:hover {
+            background-color: #e9f2ff;
+            color: $text-color-bright;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  width: 100%;
+  left: -40px !important;
+  padding: 10px 0 16px !important;
+  border: none !important;
+  box-shadow: 0 10px 50px 0 rgb(0 43 187 / 12%) !important;
+  z-index: 99 !important;
+  @media (max-width: 567px) {
+    left: -30px !important;
+    padding: 6px 0 8px !important;
+  }
+}
+.menuItem {
+  padding: 6px 60px 6px 30px !important;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: left !important;
+  color: $text-color-main-second;
+  cursor: pointer;
+  transition: $light-transition;
+  &:hover {
+    background: #eaf1ff;
+  }
+  &:first-child {
+    margin-top: 10px !important;
+  }
+}
+
+.activeMenuItem {
+  color: $text-color-main;
+  font-weight: 700;
+}
+
+.activeTag {
+  color: $text-color-bright !important;
+  background-color: #e9f2ff !important;
+}

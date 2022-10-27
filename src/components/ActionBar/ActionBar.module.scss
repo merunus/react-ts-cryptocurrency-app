@@ -1,0 +1,118 @@
+@import "../../scss//variables.scss";
+
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0 3px 32px;
+  @media (max-width: 1024px) {
+    display: block;
+    padding: 18px 0 3px;
+  }
+  .historyChain {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+    &__item {
+      font-size: 0.9rem;
+      font-weight: 500;
+      white-space: nowrap;
+      margin: 2px 0;
+      color: $text-color-main-second;
+      a {
+        text-decoration: none;
+        color: $text-color-main-second;
+        transition: $light-transition;
+        &:hover {
+          color: $text-color-main;
+        }
+      }
+      &:not(:last-child) {
+        &::after {
+          display: inline-block;
+          content: "";
+          width: 5px;
+          height: 9px;
+          margin: 0 10px 0 6px;
+          background-image: url(https://cdn.coinranking.com/assets/4448d7c2b71dc7650e56a271f598bd0f.svg);
+        }
+      }
+    }
+  }
+  .actionButtons {
+    margin: 0 0 0 auto;
+    &__selects {
+      display: flex;
+      padding: 0 32px;
+      @media (max-width: 1024px) {
+        padding: 0;
+        margin: 0 32px;
+        min-width: calc(100% - 64px);
+      }
+    }
+    &__scrollable {
+      padding: 0 32px;
+      @media (max-width: 1024px) {
+        padding: 0;
+      }
+    }
+
+    &__wrapper {
+      border-color: #cee1ff !important;
+      display: inline-flex;
+      overflow: hidden;
+      white-space: nowrap;
+      vertical-align: top;
+      border: 1px solid #173e7b;
+      border-radius: 3px;
+      @media (max-width: 1024px) {
+        margin: 0 32px;
+        min-width: calc(100% - 64px);
+      }
+      @media (max-width: 567px) {
+        margin: 0 20px;
+        min-width: calc(100% - 40px);
+      }
+    }
+    &__item {
+      border-color: #cee1ff !important;
+      flex-grow: 1;
+      display: inline-block;
+      vertical-align: top;
+      border-right: 1px solid #173e7b;
+    }
+    &__buttonSelect {
+      font-size: 1.2rem;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 0;
+      background: none;
+      outline: none;
+      cursor: pointer;
+      transition: $light-transition;
+      padding: 6px 15px 7px 19px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 33px;
+      width: 100%;
+      &_text {
+        color: $text-color-main-second;
+        font-size: 0.8rem;
+        transition: $light-transition;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        margin-right: 8px;
+        white-space: nowrap;
+      }
+    }
+  }
+}

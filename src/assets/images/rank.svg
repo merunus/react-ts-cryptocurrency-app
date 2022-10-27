@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="14" viewBox="0 0 21 14" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:10;">
+  <path d="M9,1L20,1" style="fill:none;fill-rule:nonzero;stroke:#254C89;stroke-width:2px;"/>
+  <path d="M3,11.5L3,1" style="fill:none;fill-rule:nonzero;stroke:#254C89;stroke-width:2px;"/>
+  <path d="M9,5L17.5,5" style="fill:none;fill-rule:nonzero;stroke:#254C89;stroke-width:2px;"/>
+  <path d="M9,9L15,9" style="fill:none;fill-rule:nonzero;stroke:#254C89;stroke-width:2px;"/>
+  <path d="M9,13L12.5,13" style="fill:none;fill-rule:nonzero;stroke:#254C89;stroke-width:2px;"/>
+  <path d="M1,11L3,13L5,11L1,11Z" style="fill:#254C89;stroke:#254C89;stroke-width:2px;stroke-linejoin:round;stroke-miterlimit:1.5;"/>
+</svg>

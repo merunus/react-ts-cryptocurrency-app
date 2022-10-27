@@ -1,0 +1,70 @@
+@import "../../scss//variables.scss";
+
+.search {
+  &__btn {
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 3px 7px 0;
+    margin: 0;
+    height: 30px;
+    z-index: 3;
+  }
+  .searchPopup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    &__wrapper {
+      display: flex;
+      max-width: 1292px;
+      margin: 0 auto;
+      padding: 0 45px;
+    }
+    &__form {
+      flex-grow: 1;
+      max-width: 420px;
+    }
+    &__input {
+      color: $text-color-main !important;
+      width: 100%;
+      appearance: none;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: left 7px top 5.5px;
+      border-radius: 0;
+      font-size: 1rem;
+      font-weight: 450;
+      padding: 0 7px 0px 37px;
+      margin: 0;
+      border: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      min-width: 0;
+      text-indent: 0;
+      height: 30px;
+      flex-grow: 1;
+      &::placeholder {
+        color: #557ac3;
+        font-size: 0.95em;
+      }
+      @media (max-width: 568px) {
+        padding: 0 7px 0px 5px;
+      }
+    }
+    &__clearBtn {
+      cursor: pointer;
+      appearance: none;
+      background: none;
+      border: 0;
+      padding: 1px 7px 0;
+      margin: 0;
+      height: 30px;
+    }
+  }
+
+  .active {
+    pointer-events: none;
+  }
+}

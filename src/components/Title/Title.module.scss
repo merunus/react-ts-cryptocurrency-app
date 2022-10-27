@@ -1,0 +1,47 @@
+@import "../../scss//variables.scss";
+
+.title {
+  margin: 0px 0 16px;
+
+  &__text {
+    padding: 0 52px;
+    max-width: 1292px;
+    margin: 0 auto;
+    @media (max-width: 1024px) {
+      padding: 0 32px;
+    }
+    @media (max-width: 568px) {
+      padding: 0 20px;
+    }
+    h1,
+    p {
+      color: $text-color-main-second;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+      @media (max-width: 1024px) {
+        font-size: 1.6rem;
+        margin: 32px 0 0;
+      }
+      @media (max-width: 567px) {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 24px 0 0px;
+      }
+    }
+    p {
+      margin: 10px 0 40px;
+      font-weight: 400;
+      @media (max-width: 1024px) {
+        margin: 6px 0 30px;
+      }
+      @media (max-width: 567px) {
+        margin: 6px 0 30px;
+        font-size: 0.8em;
+        text-align: center;
+      }
+    }
+  }
+}

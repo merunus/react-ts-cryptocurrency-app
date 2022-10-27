@@ -1,0 +1,126 @@
+@import "../../scss//variables.scss";
+
+.paginationContainer {
+  margin: 20px 0 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 1024px) {
+    margin: 20px 0 35px;
+  }
+  @media (max-width: 600px) {
+    margin-bottom: 40px;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page {
+    border-radius: 4px;
+    margin: 0 1px;
+    min-width: 28px;
+    text-align: center;
+    &:hover {
+      background-color: #e5efff;
+    }
+  }
+  .pageLink {
+    text-decoration: none;
+    color: $text-color-main;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 8px 12px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @media (max-width: 600px) {
+      margin: 1px;
+      padding: 8px;
+      font-size: 0.85rem;
+    }
+  }
+  .pageActive {
+    background: #002358 !important;
+  }
+  .pageLinkActive {
+    color: #fff !important;
+  }
+  .previous {
+    background-color: #126bff;
+    display: block;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0;
+    font-weight: 700;
+    transition: $light-transition;
+    cursor: pointer;
+    margin: 0 25px;
+    &:hover {
+      background-color: #3b84ff;
+    }
+    @media (max-width: 600px) {
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+  }
+  .previousLink {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 12px 29px 14px;
+    @media (max-width: 600px) {
+      padding: 6px 9px 7px;
+      border-radius: 5px;
+    }
+  }
+
+  .next {
+    background-color: #126bff;
+    display: block;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0;
+    font-weight: 700;
+    transition: $light-transition;
+    cursor: pointer;
+    margin: 0 25px;
+    &:hover {
+      background-color: #3b84ff;
+    }
+    @media (max-width: 600px) {
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+  }
+  .nextLink {
+    padding: 12px 29px 14px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    @media (max-width: 600px) {
+      padding: 6px 9px 7px;
+      border-radius: 5px;
+    }
+  }
+  .disabled {
+    background: #fff !important;
+    border: 2px solid #bfd4f5 !important;
+    color: #8ba7d3 !important;
+    cursor: default !important;
+  }
+  .break {
+    color: #002358;
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
+  .arrowsImg {
+    pointer-events: none;
+  }
+}
