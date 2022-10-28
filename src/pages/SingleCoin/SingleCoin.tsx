@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { selectCurrencyData } from "../../redux/currency/selectors";
 import {
   fetchCoinHistory,
-  fetchCoinPrice,
   fetchCurrenciesRefs,
   fetchSingleCoin,
 } from "../../redux/currency/slice";
@@ -13,7 +12,7 @@ import SingleCoinContainer from "./SingleCoinContainer";
 const SingleCoin = () => {
   const { coinId, coinName } = useParams();
   const dispatch = useAppDispatch();
-  const { currentTimePeriod, currentCurrency, currencyTo } =
+  const { currentTimePeriod, currentCurrency } =
     useAppSelector(selectCurrencyData);
 
   useEffect(() => {
@@ -38,16 +37,6 @@ const SingleCoin = () => {
   useEffect(() => {
     dispatch(fetchCurrenciesRefs({ limit: 100 }));
   }, [dispatch]);
-
-  useEffect(() => {
-    if (coinId)
-      dispatch(
-        fetchCoinPrice({
-          coinId: coinId,
-          referenceCurrencyUuid: currencyTo,
-        })
-      );
-  }, [coinId, currencyTo, dispatch]);
 
   return <SingleCoinContainer coinId={coinId} coinName={coinName} />;
 };

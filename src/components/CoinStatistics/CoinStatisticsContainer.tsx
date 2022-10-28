@@ -19,9 +19,10 @@ const CoinStatisticsContainer: React.FC<TCoinStatisticContProps> = ({
         </div>
         <table className={styles.stats__list}>
           <tbody>
-            {options.map((option) => {
+            {options.map((option, index) => {
               return (
                 <CoinStatisticsRow
+                  key={index}
                   icon={option.icon}
                   label={option.label}
                   value={option.value}

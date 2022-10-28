@@ -18,7 +18,7 @@ const Calculator: React.FC<TCalculatorProps> = ({
   singleCoinId,
 }) => {
   const dispatch = useAppDispatch();
-  const { exchangeRate, currencyFrom, currencyTo } =
+  const { exchangeRate, currencyFrom, currencyTo, isLoading } =
     useAppSelector(selectCurrencyData);
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1400px)" });
@@ -51,8 +51,8 @@ const Calculator: React.FC<TCalculatorProps> = ({
   }, [amountFrom, exchangeRate]);
 
   useEffect(() => {
-    dispatch(fetchCurrenciesRefs({ limit: 100 }));
-  }, [dispatch]);
+    if (!isSingleCoin) dispatch(fetchCurrenciesRefs({ limit: 100 }));
+  }, [dispatch, isSingleCoin]);
 
   const handleChangeAmountFrom = (value: number) => {
     if (isNaN(value) || value.toString() === "Infinity") return;
@@ -73,8 +73,8 @@ const Calculator: React.FC<TCalculatorProps> = ({
     option && dispatch(changeCurrencyTo(option?.uuid));
 
   const handleSwapCurrencies = () => {
-    dispatch(dispatch(changeCurrencyTo(currencyFrom)));
-    dispatch(dispatch(changeCurrencyFrom(currencyTo)));
+    dispatch(changeCurrencyFrom(currencyTo));
+    dispatch(changeCurrencyTo(currencyFrom));
   };
 
   return (
@@ -93,6 +93,7 @@ const Calculator: React.FC<TCalculatorProps> = ({
       isBigScreen={isBigScreen}
       isSingleCoin={isSingleCoin}
       singleCoinId={singleCoinId}
+      isLoading={isLoading}
     />
   );
 };

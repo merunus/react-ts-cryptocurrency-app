@@ -14,11 +14,11 @@ const CalculatorContainer: React.FC<TCalculatorContProps> = ({
   handleChangeCurrencyTo,
   handleSwapCurrencies,
   isSingleCoin,
-  singleCoinId,
   isBigScreen,
   amountFrom,
   currenciesRefs,
   currencyFrom,
+  isLoading,
   currencyTo,
 }) => {
   return (
@@ -53,11 +53,10 @@ const CalculatorContainer: React.FC<TCalculatorContProps> = ({
                 isBigScreen
                   ? currenciesRefs.find(
                       (el) =>
-                        el.uuid === (isSingleCoin ? singleCoinId : currencyFrom)
+                        el.uuid === currencyFrom
                     )?.name
                   : currenciesRefs.find(
-                      (el) =>
-                        el.uuid === (isSingleCoin ? singleCoinId : currencyFrom)
+                      (el) => el.uuid === currencyFrom
                     )?.symbol
               }
               styles={customStylesCalculator}
@@ -66,6 +65,7 @@ const CalculatorContainer: React.FC<TCalculatorContProps> = ({
           </div>
         </div>
         <button
+          disabled={isLoading}
           onClick={handleSwapCurrencies}
           className={styles.calculator__swapBtn}
         >

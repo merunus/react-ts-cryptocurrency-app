@@ -11,6 +11,7 @@ export type TCalculatorContProps = {
   singleCoinId?: string;
   amountTo: number;
   currencyOptions: TOptions[];
+  isLoading: boolean;
   handleChangeAmountFrom: (value: number) => void;
   handleChangeAmountTo: (value: number) => void;
   handleChangeCurrencyFrom: (option: TOptions | null) => void;
